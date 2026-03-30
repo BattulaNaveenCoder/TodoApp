@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+*.pyo
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+*.tsbuildinfo
+
+# IDEs
+.idea/
+*.swp
+*.swo
+*~
+
+# VS Code (keep settings and agents)
+.vscode/*
+!.vscode/settings.json
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Alembic
+alembic/versions/__pycache__/
