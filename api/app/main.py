@@ -5,6 +5,8 @@ import logging
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.routes.todo_router import router as todo_router
+
 logger = logging.getLogger(__name__)
 
 
@@ -33,6 +35,9 @@ def create_app() -> FastAPI:
     async def health_check() -> dict[str, str]:
         """Return a simple health check response."""
         return {"status": "ok"}
+
+    # Register routers
+    application.include_router(todo_router)
 
     logger.info("TodoApp API initialized")
     return application

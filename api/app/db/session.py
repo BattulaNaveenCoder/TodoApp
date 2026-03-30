@@ -9,7 +9,13 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     """Application settings loaded from environment variables."""
 
-    DATABASE_URL: str
+    DATABASE_URL: str = (
+        "mssql+aioodbc:///?odbc_connect="
+        "DRIVER={ODBC Driver 17 for SQL Server};"
+        "SERVER=localhost\\SQLEXPRESS;"
+        "DATABASE=TodoDb;"
+        "Trusted_Connection=yes;"
+    )
 
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 
